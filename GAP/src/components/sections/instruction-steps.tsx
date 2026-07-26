@@ -40,7 +40,7 @@ const steps: Step[] = [
 export default function InstructionSteps() {
   return (
     <section className="relative w-full max-w-md mx-auto px-4 sm:px-5 mb-4 mt-3">
-<div className="relative rounded-[1.5rem] sm:rounded-[2rem] p-2 sm:p-4 bg-white/5 backdrop-blur-md border-2 border-[#000c40] shadow-[0_8px_32px_rgba(204,0,0,0.1)] overflow-hidden group/box transition-all duration-500 hover:border-[#000c40] hover:scale-[1.01]">>
+<div className="relative rounded-[1.5rem] sm:rounded-[2rem] p-2 sm:p-4 bg-white/5 backdrop-blur-md border-2 border-[#000c40] shadow-[0_8px_32px_rgba(204,0,0,0.1)] overflow-hidden group/box transition-all duration-500 hover:border-[#000c40] hover:scale-[1.01]">
         <div className="absolute inset-0 rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden pointer-events-none">
           <img
             src="https://i.imgur.com/i18sUbQ.jpeg"
