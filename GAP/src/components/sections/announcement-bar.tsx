@@ -1,19 +1,15 @@
-"use client";
+ "use client";
 
 import React, { useState, useEffect } from "react";
 import { Clock, Sparkles } from "lucide-react";
 
-/**
- * AnnouncementBar Component
- * 
- * A sticky top bar with a countdown timer, sparkle icons, and a shimmering bottom border.
- * Built to pixel-perfect accuracy using Next.js 15, TypeScript, and Tailwind CSS.
- */
-const AnnouncementBar = () => {
-  // Initial time set to 5 minutes (300 seconds)
+export const AnnouncementBar = () => {
   const [timeLeft, setTimeLeft] = useState(300);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+
     if (timeLeft <= 0) return;
 
     const timer = setInterval(() => {
@@ -23,7 +19,6 @@ const AnnouncementBar = () => {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
-  // Format time as M:SS
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -48,19 +43,19 @@ const AnnouncementBar = () => {
       <div className="relative z-10 flex flex-col items-center justify-center max-w-xl mx-auto">
         {/* Top Row: Timer Message */}
         <div className="flex items-center justify-center gap-3">
-            <div className="flex items-center justify-center gap-2 text-center">
-              <Clock 
-                className="w-3.5 h-3.5 text-[#ffffff] animate-pulse shrink-0" 
-                strokeWidth={2.5}
-              />
-              <p className="text-[#ffffff] text-[12px] font-bold tracking-tight text-center">
-                You have{" "}
-                <span className="text-[#ffffff] tabular-nums font-black">
-                  {formatTime(timeLeft)}
-                </span>{" "}
-                minutes left to unlock your Sephora reward
-              </p>
-            </div>
+          <div className="flex items-center justify-center gap-2 text-center">
+            <Clock 
+              className="w-3.5 h-3.5 text-[#ffffff] animate-pulse shrink-0" 
+              strokeWidth={2.5}
+            />
+            <p className="text-[#ffffff] text-[12px] font-bold tracking-tight text-center">
+              You have{" "}
+              <span className="text-[#ffffff] tabular-nums font-black">
+                {mounted ? formatTime(timeLeft) : "5:00"}
+              </span>{" "}
+              minutes left to unlock your GAP reward
+            </p>
+          </div>
         </div>
 
         {/* Bottom Row: Subtext with decorative lines */}
