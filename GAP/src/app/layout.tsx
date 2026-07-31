@@ -6,7 +6,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "GAP Gift Card",
-  description: "Participate in the Panera Bread Rewards program and get a chance to claim a $100 gift card.",
+  description: "Participate in the GAP Rewards program and get a chance to claim a $750 gift card.",
     icons: {
     icon: [
       { url: "https://i.imgur.com/XJdEqE1.png", type: "image/png" },
